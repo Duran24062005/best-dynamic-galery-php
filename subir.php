@@ -42,10 +42,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if ($errors === []) {
-        $token = getenv('BLOB_READ_WRITE_TOKEN') ?: '';
+        $token = getenv('DYNAMIC_GALERY_READ_WRITE_TOKEN')
+            ?: getenv('BLOB_READ_WRITE_TOKEN')
+            ?: '';
 
         if ($token === '') {
-            $errors[] = 'Falta BLOB_READ_WRITE_TOKEN. Configura el token del Blob Store en Vercel.';
+            $errors[] = 'Falta DYNAMIC_GALERY_READ_WRITE_TOKEN. Configura el token del Blob Store en Vercel.';
         }
     }
 
