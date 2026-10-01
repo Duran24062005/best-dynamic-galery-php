@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#b1b1dd",
+                        "primary-container": "#2e3192",
+                        "on-tertiary-fixed": "#002116",
+                        "on-tertiary": "#003828",
+                        "on-primary": "#1e2084",
+                        "on-error": "#690005",
+                        "surface-variant": "#34343b",
+                        "surface-container-highest": "#34343b",
+                        "tertiary": "#00e1ab",
+                        "on-surface": "#e4e1ea",
+                        "inverse-surface": "#e4e1ea",
+                        "inverse-on-surface": "#303036",
+                        "on-secondary": "#2b2d51",
+                        "surface-container-high": "#2a2930",
+                        "inverse-primary": "#4f54b4",
+                        "on-background": "#e4e1ea",
+                        "tertiary-container": "#004834",
+                        "surface-container": "#1f1f25",
+                        "secondary-fixed": "#e1e0ff",
+                        "primary-fixed": "#e1e0ff",
+                        "on-tertiary-container": "#00c192",
+                        "secondary": "#c2c3f0",
+                        "surface": "#131319",
+                        "on-tertiary-fixed-variant": "#00513c",
+                        "on-secondary-fixed-variant": "#424369",
+                        "secondary-container": "#424369",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "tertiary-fixed-dim": "#00e1ab",
+                        "surface-tint": "#c0c1ff",
+                        "on-primary-fixed": "#04006d",
+                        "surface-container-low": "#1b1b21",
+                        "surface-dim": "#131319",
+                        "outline": "#908f9d",
+                        "on-error-container": "#ffdad6",
+                        "error-container": "#93000a",
+                        "on-surface-variant": "#c7c5d4",
+                        "on-primary-container": "#9da1ff",
+                        "on-primary-fixed-variant": "#373a9b",
+                        "outline-variant": "#464652",
+                        "surface-bright": "#39383f",
+                        "secondary-fixed-dim": "#c2c3f0",
+                        "error": "#ffb4ab",
+                        "primary": "#c0c1ff",
+                        "background": "#131319",
+                        "on-secondary-fixed": "#16183b",
+                        "tertiary-fixed": "#36ffc4",
+                        "surface-container-lowest": "#0e0e14"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-tertiary selection:text-on-tertiary">
+<!-- Top Navigation Anchor -->
+<nav class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-xl dark:bg-[#131319]/60 flex justify-between items-center px-8 py-4 max-w-full shadow-[0px_0px_40px_rgba(192,193,255,0.06)] font-manrope tracking-tight">
+<div class="text-xl font-bold tracking-tighter text-[#c0c1ff]">The Cinematic Curator</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#c0c1ff] font-bold border-b-2 border-[#00e1ab] pb-1" href="#">Gallery</a>
+<a class="text-[#c7c5d4] hover:text-[#c0c1ff] transition-colors" href="#">Upload</a>
+<a class="text-[#c7c5d4] hover:text-[#c0c1ff] transition-colors" href="#">Manage</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-lg hover:bg-[#39383f]/40 transition-all duration-300 active:scale-95 text-[#c0c1ff]">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="p-2 rounded-lg hover:bg-[#39383f]/40 transition-all duration-300 active:scale-95 text-[#c0c1ff]">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</nav>
+<!-- Main Detail Canvas -->
+<main class="min-h-screen pt-24 pb-32 md:pb-12 px-4 md:px-8 max-w-[1600px] mx-auto">
+<!-- Lightbox Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Hero Image Display (The Protagonist) -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<div class="group relative aspect-[16/10] bg-surface-container-low rounded-xl overflow-hidden shadow-2xl">
+<img alt="Cinematic landscape" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]" data-alt="dramatic wide shot of misty mountains at twilight with cold blue tones and a single orange light glowing from a cabin" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBd5WYETaIbBUHpZwOXlht0XoneYWEcF-ZSmGiB9s7Kd2XXxw9Feevc5BOnmD9td4bfwad4y8Yr2rxd-ZYyy4GvXMj7iRrh1fT_c4Ii-k8WEIk3cTa067gRBwHp_zWwqbaNcSTluiQCh3XpdmTFjg-X1Zy6oyLBT8nTNIzTDlrPwX57RiuC6Bz0-7PwSiOe99VkIFUCTDs_utcBxUIc04lAOprod42G_0PbDq-zqxjlfj6srj6_g47XPyo9ymbKg1b4uK2AnpjvCkM"/>
+<!-- Floating Metadata Overlay (Glassmorphism) -->
+<div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
+<div class="bg-surface/60 backdrop-blur-xl p-4 rounded-xl border border-outline-variant/10">
+<span class="block text-tertiary text-[10px] uppercase tracking-widest font-bold mb-1">Featured Capture</span>
+<h1 class="text-2xl font-bold tracking-tighter text-primary">Nebula Peaks Explorer</h1>
+</div>
+<div class="flex gap-2">
+<button class="bg-surface/60 backdrop-blur-xl p-3 rounded-xl hover:bg-surface-bright/60 transition-all text-on-surface">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<button class="bg-surface/60 backdrop-blur-xl p-3 rounded-xl hover:bg-surface-bright/60 transition-all text-on-surface">
+<span class="material-symbols-outlined">fullscreen</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Technical Description -->
+<div class="bg-surface-container-low p-8 rounded-xl">
+<p class="text-on-surface leading-relaxed body-lg text-opacity-90 max-w-2xl">
+                        A study in atmospheric perspective and tonal depth. Captured during the rare convergence of alpine mist and the lunar transition, highlighting the jagged obsidian textures of the range against the ethereal glow of the high-altitude atmosphere.
+                    </p>
+</div>
+</div>
+<!-- Sidebar Metadata & Actions -->
+<aside class="lg:col-span-4 space-y-8">
+<!-- Action Cluster -->
+<div class="flex flex-col gap-4">
+<button class="w-full py-4 bg-primary text-on-primary font-bold rounded-lg flex items-center justify-center gap-2 hover:brightness-110 active:scale-95 transition-all">
+<span class="material-symbols-outlined">download</span>
+                        Download Original (8K)
+                    </button>
+<div class="grid grid-cols-2 gap-4">
+<button class="py-3 bg-surface-container text-on-surface-variant text-sm font-medium rounded-lg flex items-center justify-center gap-2 hover:bg-surface-bright transition-all">
+<span class="material-symbols-outlined text-sm">share</span>
+                            Share
+                        </button>
+<button class="py-3 bg-surface-container text-on-surface-variant text-sm font-medium rounded-lg flex items-center justify-center gap-2 hover:bg-surface-bright transition-all">
+<span class="material-symbols-outlined text-sm">palette</span>
+                            Colors
+                        </button>
+</div>
+</div>
+<!-- Info Cards (Asymmetric Stack) -->
+<div class="space-y-1">
+<!-- Photographer Card -->
+<div class="p-6 bg-surface-container-low rounded-xl border-l-4 border-tertiary">
+<span class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-bold mb-3 block">Creator</span>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-primary-container">
+<img class="w-full h-full object-cover" data-alt="portrait of a professional photographer with glasses looking thoughtfully at the camera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK-_mWegk50kLAQaGHZNI8qBwNw66U0RvpdyKniCGIUtTtWHpekuISXkNuUEo_UOTXonNsot-kIibY-qmSDEjnXJX0LU9ZNKj6SyGfFeEi3e3E_wLtt-e4ErHa_HXPE8VP_N3FL5XCG2HlHRoYBL3xH8KA0R03Wc_BwfXM-Ehxuu12IYN461IvXuTRnuZwURA87gKmJ8noTEPxW2mMgmWejqAmU90DuOOqZsSG9f7Yu7_OJ_o8bJsSLndwBA7QVa63_rz0gZZqCDs"/>
+</div>
+<div>
+<h3 class="font-bold text-primary">Julian Vancore</h3>
+<p class="text-sm text-on-surface-variant">Senior Visual Curator</p>
+</div>
+</div>
+</div>
+<!-- Metadata Grid -->
+<div class="grid grid-cols-2 gap-px mt-6 bg-outline-variant/10 rounded-xl overflow-hidden">
+<div class="bg-surface-container p-5">
+<span class="material-symbols-outlined text-tertiary mb-2">calendar_today</span>
+<span class="block text-[10px] uppercase text-on-surface-variant font-bold">Captured</span>
+<span class="text-sm font-medium">Oct 24, 2023</span>
+</div>
+<div class="bg-surface-container p-5">
+<span class="material-symbols-outlined text-tertiary mb-2">location_on</span>
+<span class="block text-[10px] uppercase text-on-surface-variant font-bold">Location</span>
+<span class="text-sm font-medium">Lofoten, NO</span>
+</div>
+<div class="bg-surface-container p-5">
+<span class="material-symbols-outlined text-tertiary mb-2">camera</span>
+<span class="block text-[10px] uppercase text-on-surface-variant font-bold">Lens</span>
+<span class="text-sm font-medium">85mm f/1.2 L</span>
+</div>
+<div class="bg-surface-container p-5">
+<span class="material-symbols-outlined text-tertiary mb-2">settings_input_component</span>
+<span class="block text-[10px] uppercase text-on-surface-variant font-bold">Exposure</span>
+<span class="text-sm font-medium">1/200s iso 100</span>
+</div>
+</div>
+</div>
+<!-- Tags / Fluid Scroller Pattern -->
+<div>
+<h4 class="text-[10px] uppercase tracking-widest font-bold text-on-surface-variant mb-4 px-1">Classifications</h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 bg-surface-container-highest/50 rounded-full text-xs text-primary-fixed-dim font-medium border border-outline-variant/20">Atmospheric</span>
+<span class="px-3 py-1.5 bg-surface-container-highest/50 rounded-full text-xs text-primary-fixed-dim font-medium border border-outline-variant/20">Monochrome Blue</span>
+<span class="px-3 py-1.5 bg-surface-container-highest/50 rounded-full text-xs text-primary-fixed-dim font-medium border border-outline-variant/20">Nordic</span>
+<span class="px-3 py-1.5 bg-surface-container-highest/50 rounded-full text-xs text-primary-fixed-dim font-medium border border-outline-variant/20">8K Mastery</span>
+</div>
+</div>
+</aside>
+</div>
+<!-- Related Images Strip (The Editorial Stage) -->
+<section class="mt-24">
+<div class="flex items-end justify-between mb-8 border-b border-outline-variant/10 pb-4">
+<div>
+<span class="text-tertiary font-bold tracking-[0.3em] text-[10px] uppercase">The Collection</span>
+<h2 class="text-3xl font-bold tracking-tighter mt-1">Related Perspectives</h2>
+</div>
+<a class="text-primary text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all" href="#">
+                    View Gallery <span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+<!-- Bento-ish Carousel Strip -->
+<div class="flex gap-6 overflow-x-auto hide-scrollbar pb-8">
+<div class="min-w-[320px] aspect-[4/5] bg-surface-container rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="cinematic vertical shot of a waterfall cascading down a sheer cliff face at sunrise" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCW0K7MuvoUACSDCGvT6HfqhCGY1cbWAhfiDwb7BnH2QUNhytQaHSAM8mYdjQjDgNMxlQGvKOpJCKiJnCdVXzJQPW2u9RncNo199lqf2k9DH_fH2GOQHfsdEA1cftCNuK_GDl7Az-Va5-FMKQzInpZpNLk33jUVTer5ZwFxkKO3p67iID9FmvjaZNHYRFOvCUxgET_2nUyHkKWrpzXlb1EkIimmNwK0ji_sO-_GWj8a8z8DhehxvcjG_FO8C9IQDbka09DICZ_YaeM"/>
+</div>
+<div class="min-w-[440px] aspect-[16/10] bg-surface-container rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="wide cinematic shot of snow-capped mountain range under a clear starry night sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9XTNgoVWokh9wPPbxjn6DzNX8u8wewwaMRH3W9w0aV4KFHsZj0nZBY5aPaDg0MnnltRAyAUwqrPK_s7YHm31vENyQjnOyjdZw-1R8GQTU0nydNmYuKlw_aBAp8ioaRGdnyhlXWR5JAh4gahcAMBC91xBr37lMScuKOk0D2v1wsWUecYIG0JS9yn9aie-8yUxSFReCx_O9QcWxjSYLHvYv3h6hg0xL8UO03hG3z9LAOFJMSAOa6zcjv6A7uDU20bQ1pcKKgK4oK4M"/>
+</div>
+<div class="min-w-[320px] aspect-[4/5] bg-surface-container rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="misty morning in a lush green valley with a small river reflecting the soft dawn light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3pWsqWIINmbocaZWvhfTK9J9bAJBvVB8odOqIEw1ZcpYAnUkyaylhoA0zTzRTnmci-cKE_pgFoANuDA6e5POzC7kaUU7F-hudtD_P-S8VKr-zgllkxWB_HTj7SEKodR-ROqODF_PsndAe2KuxpyQzWHLQGtamLYj8VfYJkTT881sQX9o2jICAcBwwD2wUX_-kq1AGYBFtRrj1eD-0sXRBEr7984VuRgYDKXJ05ebYBVVgs5EZpn2n-vmvvwbRUyh-NakITdxL894"/>
+</div>
+<div class="min-w-[320px] aspect-[4/5] bg-surface-container rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="scenic aerial view of a winding road through a dense dark evergreen forest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAP_5yDweziGu7-QYaiqI8P3E5hfNuJeEM8A2TKTroE6a2bXp1SGKlJEx3NfxlGZAjslGVndwff7utMYV_uh4ZbfFKryt_BUvfrYOeaSWB6mgin186XtqQtJaCbp2cdYekAAxe7nk5v9QBFTRhl8rPfPTKTTDQDw7DirTI9xfXxte9ctQFpZ_h4ZYsM5XrEkbiCOvj0PtgSsJxozHOAf9TQx043VIKVpXoBq8guBXouChHYFglmfMGE9jmu8a72Rj2E-t8v2Hk7Wkk"/>
+</div>
+</div>
+</section>
+</main>
+<!-- Mobile Bottom Navigation Shell -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-[#131319]/60 backdrop-blur-xl flex justify-around items-center p-4 shadow-2xl rounded-t-xl">
+<a class="flex flex-col items-center justify-center bg-[#2e3192] text-[#c0c1ff] rounded-lg px-4 py-1 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="text-[10px] font-manrope font-medium uppercase tracking-widest mt-1">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#c7c5d4] opacity-70 hover:opacity-100 transition-opacity active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">add_a_photo</span>
+<span class="text-[10px] font-manrope font-medium uppercase tracking-widest mt-1">Upload</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#c7c5d4] opacity-70 hover:opacity-100 transition-opacity active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">settings_brightness</span>
+<span class="text-[10px] font-manrope font-medium uppercase tracking-widest mt-1">Studio</span>
+</a>
+</nav>
+<!-- Background Decoration -->
+<div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
+<div class="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-primary/5 rounded-full blur-[120px]"></div>
+<div class="absolute top-[40%] -right-[10%] w-[30%] h-[50%] bg-tertiary/5 rounded-full blur-[120px]"></div>
+</div>
+</body></html>

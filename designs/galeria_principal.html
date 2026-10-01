@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Cinematic Curator | Gallery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-container": "#b1b1dd",
+                    "primary-container": "#2e3192",
+                    "on-tertiary-fixed": "#002116",
+                    "on-tertiary": "#003828",
+                    "on-primary": "#1e2084",
+                    "on-error": "#690005",
+                    "surface-variant": "#34343b",
+                    "surface-container-highest": "#34343b",
+                    "tertiary": "#00e1ab",
+                    "on-surface": "#e4e1ea",
+                    "inverse-surface": "#e4e1ea",
+                    "inverse-on-surface": "#303036",
+                    "on-secondary": "#2b2d51",
+                    "surface-container-high": "#2a2930",
+                    "inverse-primary": "#4f54b4",
+                    "on-background": "#e4e1ea",
+                    "tertiary-container": "#004834",
+                    "surface-container": "#1f1f25",
+                    "secondary-fixed": "#e1e0ff",
+                    "primary-fixed": "#e1e0ff",
+                    "on-tertiary-container": "#00c192",
+                    "secondary": "#c2c3f0",
+                    "surface": "#131319",
+                    "on-tertiary-fixed-variant": "#00513c",
+                    "on-secondary-fixed-variant": "#424369",
+                    "secondary-container": "#424369",
+                    "primary-fixed-dim": "#c0c1ff",
+                    "tertiary-fixed-dim": "#00e1ab",
+                    "surface-tint": "#c0c1ff",
+                    "on-primary-fixed": "#04006d",
+                    "surface-container-low": "#1b1b21",
+                    "surface-dim": "#131319",
+                    "outline": "#908f9d",
+                    "on-error-container": "#ffdad6",
+                    "error-container": "#93000a",
+                    "on-surface-variant": "#c7c5d4",
+                    "on-primary-container": "#9da1ff",
+                    "on-primary-fixed-variant": "#373a9b",
+                    "outline-variant": "#464652",
+                    "surface-bright": "#39383f",
+                    "secondary-fixed-dim": "#c2c3f0",
+                    "error": "#ffb4ab",
+                    "primary": "#c0c1ff",
+                    "background": "#131319",
+                    "on-secondary-fixed": "#16183b",
+                    "tertiary-fixed": "#36ffc4",
+                    "surface-container-lowest": "#0e0e14"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-tertiary selection:text-on-tertiary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-xl dark:bg-[#131319]/60 flex justify-between items-center px-8 py-4 max-w-full shadow-[0px_0px_40px_rgba(192,193,255,0.06)]">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tighter text-[#c0c1ff] font-manrope">The Cinematic Curator</span>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-[#c0c1ff] font-bold border-b-2 border-[#00e1ab] pb-1 font-manrope tracking-tight" href="#">Gallery</a>
+<a class="text-[#c7c5d4] hover:text-[#c0c1ff] transition-colors font-manrope tracking-tight" href="#">Upload</a>
+<a class="text-[#c7c5d4] hover:text-[#c0c1ff] transition-colors font-manrope tracking-tight" href="#">Manage</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group">
+<div class="absolute inset-y-0 left-3 flex items-center pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">search</span>
+</div>
+<input class="bg-surface-container-high border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-1 focus:ring-tertiary/20 w-48 md:w-64 transition-all" placeholder="Search gallery..." type="text"/>
+</div>
+<button class="p-2 rounded-lg hover:bg-[#39383f]/40 transition-all duration-300">
+<span class="material-symbols-outlined text-[#c0c1ff]">account_circle</span>
+</button>
+</div>
+</nav>
+<main class="pt-24 pb-20 md:pb-8 px-6 md:px-12 max-w-[1600px] mx-auto">
+<!-- Hero / Headline Section -->
+<header class="mb-12">
+<h1 class="text-4xl md:text-6xl font-extrabold tracking-tighter text-on-surface mb-4">
+                Curated <span class="text-tertiary">Moments</span>
+</h1>
+<p class="text-on-surface-variant max-w-xl text-lg font-light leading-relaxed">
+                A high-performance digital stage for cinematic excellence. Explore our editorial selection of visual narratives.
+            </p>
+</header>
+<!-- Category Filters & Action -->
+<section class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
+<div class="flex items-center gap-2 overflow-x-auto hide-scrollbar pb-2 md:pb-0">
+<button class="px-6 py-2 rounded-full bg-tertiary text-on-tertiary text-sm font-bold tracking-wide">All</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-low text-on-surface-variant hover:text-on-surface transition-colors text-sm font-medium">Nature</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-low text-on-surface-variant hover:text-on-surface transition-colors text-sm font-medium">Urban</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-low text-on-surface-variant hover:text-on-surface transition-colors text-sm font-medium">Abstract</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-low text-on-surface-variant hover:text-on-surface transition-colors text-sm font-medium">People</button>
+</div>
+<button class="flex items-center justify-center gap-2 bg-primary text-on-primary px-6 py-3 rounded-lg font-bold text-sm shadow-lg hover:brightness-110 active:scale-95 transition-all">
+<span class="material-symbols-outlined">add_a_photo</span>
+                New Upload
+            </button>
+</section>
+<!-- Gallery Grid (Asymmetric Bento/Masonry Hybrid) -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+<!-- Column 1 -->
+<div class="md:col-span-4 flex flex-col gap-8">
+<div class="group relative overflow-hidden rounded-full bg-surface-container transition-all hover:bg-surface-bright">
+<img class="w-full aspect-[4/5] object-cover transition-transform duration-500 group-hover:scale-[1.02]" data-alt="abstract flowing 3d ribbons in deep purple and teal with soft atmospheric lighting and cinematic grain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUA707NYJ71CZED3xAbKdR4ZdcGXBhDJqYANpTXO55hDGV407sun_o2ZoHxBBvexEmq77tLzSrwHLs98C9NqokS2izta_4TI-eVSgZ3pk89LBSMYLdeFJfRhXfdH82VCn3DYwJr76VfSRBFdeBLCUK18NH3SHeNaEqMwHe-ubvbj4a6-L64a49RUNVhMdobPo6oRSDZ3HfAwP6MuLOrwUnlEd0fSMbt70nIzx3lcf91yATMzJYxuMXn2gqOKsKzRwuDAkMRNSXX7A"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+<span class="text-tertiary text-xs font-bold uppercase tracking-widest mb-1">Abstract</span>
+<h3 class="text-xl font-bold leading-tight">Digital Flow #01</h3>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-full bg-surface-container transition-all hover:bg-surface-bright">
+<img class="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-[1.02]" data-alt="cinematic long exposure of a suspension bridge at night with neon city lights reflected in dark water" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAHmLbs5Q-SCkwjcfDI4sjSBvJZr2lCCXPsWm0nUGfgt_ebgQyy4U135ViaMMF5MO5W2GkrZRrUmrMCJpZoUNJCouxDbfHhB0yYrPBPMIOxa7vH1YrdRcw6XTmW6c4AwYBsdOdH9BsO4N0t7aD87p5hM-cIftNr4vVYryaJ8Eb1rabUp1ybeKBisJtxAkjwii1iXSr-HDURCnu264CKP7q2c8Bmr1VW7s3n8_YLioc1DZcY0vH3O7UadMGxmPLdgLKAwe_MJ8ylPM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+<span class="text-tertiary text-xs font-bold uppercase tracking-widest mb-1">Urban</span>
+<h3 class="text-xl font-bold leading-tight">Neon Pulse</h3>
+</div>
+</div>
+</div>
+<!-- Column 2 (Offset/Larger) -->
+<div class="md:col-span-5 flex flex-col gap-8 md:mt-16">
+<div class="group relative overflow-hidden rounded-full bg-surface-container transition-all hover:bg-surface-bright">
+<img class="w-full aspect-[3/4] object-cover transition-transform duration-500 group-hover:scale-[1.02]" data-alt="wide shot of jagged mountain peaks piercing through a sea of clouds during blue hour with cold cinematic tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmPoYQ20LCUrL1fjYbeuWXRlVcadhPZqc9cTAfBu_AV2GPtfj1sKR2RDKGURKhjAgkXboqhnvEDMC8e4fz0vtXNSOY6fLG6fYO1H10Dp86-agDVHLKarRJFjFXxbOPxu1bPkFGR6qZ6Z-3vuCGMtI0p_vrImJOrEX_EouOoIqSUZ7lsVpM2qU5PXAV6kcYWHV3KUq7oi_2Lw53gEGwLDjjT6FfQOmydaSXGS22yZUmNnoI1tfty5ZLAFTksRoUuuSL4RlUVJ5u3H0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+<span class="text-tertiary text-xs font-bold uppercase tracking-widest mb-1">Nature</span>
+<h3 class="text-xl font-bold leading-tight">The High Peaks</h3>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-full bg-surface-container transition-all hover:bg-surface-bright">
+<img class="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-[1.02]" data-alt="dramatic portrait of a woman with high fashion lighting and deep shadows in a moody cinematic studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRi6HMk7X8GwXpn6i4GkKiNwNFE6wc0_86_ttuajMhtu7N1lF9mA1b1-ZFP5t1Th8x1M3vQm1ICwQoEcw5FmLx-iT0F42ZDA3NEJRXFf6gliplEzdoCgVnIwDeFHjRLLYn6qn3letD0pN3pBn3H8Uc8419l2aPV4M_8PAKAzFoCWGDyYo-WD3xQnA22jbFWBR7-Vd17Rpa5ua8P6VGSbkTbrlz6t_Sxh4cImogryOPiOKgXXq7Yryj65L6eUPxgbTqzPWNsK5ZWLk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+<span class="text-tertiary text-xs font-bold uppercase tracking-widest mb-1">People</span>
+<h3 class="text-xl font-bold leading-tight">Persona</h3>
+</div>
+</div>
+</div>
+<!-- Column 3 -->
+<div class="md:col-span-3 flex flex-col gap-8">
+<div class="group relative overflow-hidden rounded-full bg-surface-container transition-all hover:bg-surface-bright">
+<img class="w-full aspect-[4/5] object-cover transition-transform duration-500 group-hover:scale-[1.02]" data-alt="futuristic cyber-punk city street with bright holographic advertisements and rain-slicked pavement reflecting magenta and teal lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCO3ZMu4jJLBKiVtg6ggQbjhMaGs_Iqp2b-vUX7jytuJtimxGltZqOsZPTeLRixy0rBCo3kMgR2Pfb21npo0OaJ3d-f8_LH7rBloeG4SvW_FMNX-fMgIMQv_hpJP6qNTMkec8TscJYHOwilaJN5bK6OrZnJWdZfeCm4PoKfWy2rkoFN7_qh33UqwOTGsO5ycroZ2lzd3pffjJk_tDpZC6ZcqovUHISghxDPvBiihDcCeONobttp3jaHASP_d14ZW95OXVyobTx88xo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+<span class="text-tertiary text-xs font-bold uppercase tracking-widest mb-1">Urban</span>
+<h3 class="text-xl font-bold leading-tight">Sector 7</h3>
+</div>
+</div>
+<div class="p-8 rounded-full bg-surface-container-low border border-outline-variant/10 flex flex-col justify-center aspect-square">
+<h4 class="text-tertiary font-bold tracking-widest text-xs uppercase mb-4">Daily Curated</h4>
+<p class="text-xl font-light italic leading-relaxed text-on-surface">"Vision is the art of seeing what is invisible to others."</p>
+<div class="mt-6 w-12 h-1 bg-primary rounded-full"></div>
+</div>
+<div class="group relative overflow-hidden rounded-full bg-surface-container transition-all hover:bg-surface-bright">
+<img class="w-full aspect-[3/4] object-cover transition-transform duration-500 group-hover:scale-[1.02]" data-alt="peaceful lakeside at sunset with vibrant orange sky reflecting perfectly on still water and silhouette of pine trees" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3bJY_PcGb5VY5w48qPpIw682BsOOIUH1u_OH-QZwj7r2MBrnAbOeRi4Wwse6Ey7IRMmBhQMEnsBaXr-fcFgARdkd1J_cTN5CzCYy7FXNE0KjqVsY8C4l_qK804n06zSCLAG5SmKRWd0lHk0EuXU_yozQuiA2KWGtX1nqtGg7NXIvEfsRPuuOoPr25IZtbRBVkrotrTRcLdwWf2ZY-8iT2Wt_zKSS6SUuRzgHI-YFNsIXD6cQeNKM5NWYraQi4M5I84FJA7ZjEGyw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+<span class="text-tertiary text-xs font-bold uppercase tracking-widest mb-1">Nature</span>
+<h3 class="text-xl font-bold leading-tight">Still Water</h3>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center p-4 md:hidden bg-[#131319]/60 backdrop-blur-xl rounded-t-xl shadow-2xl">
+<a class="flex flex-col items-center justify-center bg-[#2e3192] text-[#c0c1ff] rounded-lg px-4 py-1 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="text-[10px] font-manrope font-medium uppercase tracking-widest">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#c7c5d4] opacity-70 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined">add_a_photo</span>
+<span class="text-[10px] font-manrope font-medium uppercase tracking-widest">Upload</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#c7c5d4] opacity-70 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined">settings_brightness</span>
+<span class="text-[10px] font-manrope font-medium uppercase tracking-widest">Studio</span>
+</a>
+</nav>
+<!-- Contextual FAB (Hidden on Gallery according to rules but enabled for primary action logic) -->
+<!-- Suppressing FAB on Gallery to keep it immersive as per the Shell Visibility filter -->
+</body></html>
