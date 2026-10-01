@@ -23,8 +23,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors[] = 'La descripcion es obligatoria.';
     }
 
-    if (!$file || ($file['error'] ?? UPLOAD_ERR_NO_FILE) !== UPLOAD_ERR_OK) {
-        $errors[] = 'Debes seleccionar una imagen valida.';
+    $uploadError = (int) ($file['error'] ?? UPLOAD_ERR_NO_FILE);
+
+    if ($uploadError !== UPLOAD_ERR_OK) {
+        $uploadErrors = [
+            UPLOAD_ERR_INI_SIZE => 'El servidor rechazo el archivo porque supera upload_max_filesize.',
+            UPLOAD_ERR_FORM_SIZE => 'El formulario rechazo el archivo porque supera su limite.',
+            UPLOAD_ERR_PARTIAL => 'La subida del archivo quedo incompleta.',
+            UPLOAD_ERR_NO_FILE => 'Debes seleccionar una imagen valida.',
+            UPLOAD_ERR_NO_TMP_DIR => 'El servidor no tiene directorio temporal configurado.',
+            UPLOAD_ERR_CANT_WRITE => 'El servidor no pudo guardar temporalmente el archivo.',
+            UPLOAD_ERR_EXTENSION => 'Una extension de PHP detuvo la subida.',
+        ];
+        $errors[] = $uploadErrors[$uploadError] ?? 'No se pudo subir la imagen (codigo PHP ' . $uploadError . ').';
     }
 
     $info = ($file && isset($file['tmp_name']))
@@ -37,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors[] = 'Solo se permiten imagenes JPG, JPEG o PNG.';
     }
 
-    if ($errors === [] && ($file['size'] ?? 0) > $config['max_upload_bytes']) {
+    if ($errors === [] && ($file['size'] ?? 0) > $config['gallery']['max_upload_bytes']) {
         $errors[] = 'La imagen supera el limite de 5 MB.';
     }
 
