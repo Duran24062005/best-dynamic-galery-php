@@ -72,7 +72,7 @@ final class GalleryRepository
             ':description' => $description,
         ]);
 
-        return (int) $this->connection->lastInsertId();
+        return (int) $this->connection->lastInsertId('fotos_id_seq');
     }
 
     public function findRelated(int $currentId, int $limit = 4): array
@@ -110,11 +110,11 @@ final class GalleryRepository
         }
 
         if ($format === 'png') {
-            $conditions[] = "LOWER(SUBSTRING_INDEX(imagen, '.', -1)) = 'png'";
+            $conditions[] = "LOWER(SPLIT_PART(imagen, '.', 2)) = 'png'";
         }
 
         if ($format === 'jpeg') {
-            $conditions[] = "LOWER(SUBSTRING_INDEX(imagen, '.', -1)) IN ('jpg', 'jpeg')";
+            $conditions[] = "LOWER(SPLIT_PART(imagen, '.', 2)) IN ('jpg', 'jpeg')";
         }
 
         if ($conditions === []) {

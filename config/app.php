@@ -8,15 +8,16 @@ return [
         'tagline' => 'Una curaduria visual construida en PHP con una base mas limpia y escalable.',
     ],
     'db' => [
-        'host' => '127.0.0.1',
+        'host' => 'localhost',
         'name' => 'nueva_galeria_dinamica',
-        'user' => 'alexidg',
-        'pass' => '12345',
-        'charset' => 'utf8mb4',
+        'user' => '',
+        'pass' => '',
+        'charset' => 'utf8',
     ],
     'gallery' => [
         'per_page' => 9,
         'valid_formats' => ['all', 'png', 'jpeg'],
+        'max_upload_bytes' => 5000000,
     ],
     'paths' => [
         'images_dir' => __DIR__ . '/../public/img',
