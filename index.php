@@ -7,6 +7,8 @@ require __DIR__ . '/bootstrap.php';
 $page = max(1, (int) ($_GET['page'] ?? 1));
 $search = trim((string) ($_GET['q'] ?? ''));
 $format = (string) ($_GET['format'] ?? 'all');
+$deleted = isset($_GET['deleted']) && $_GET['deleted'] === '1';
+$cleanupFailed = isset($_GET['cleanup']) && $_GET['cleanup'] === 'failed';
 
 if (!in_array($format, $config['gallery']['valid_formats'], true)) {
     $format = 'all';
@@ -21,4 +23,6 @@ View::render(__DIR__ . '/templates/pages/gallery.php', [
     'pagination' => $pagination,
     'search' => $search,
     'format' => $format,
+    'deleted' => $deleted,
+    'cleanupFailed' => $cleanupFailed,
 ]);

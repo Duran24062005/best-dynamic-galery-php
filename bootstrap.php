@@ -6,6 +6,7 @@ $config = require __DIR__ . '/config/app.php';
 
 require __DIR__ . '/src/Database.php';
 require __DIR__ . '/src/GalleryRepository.php';
+require __DIR__ . '/src/BlobStorage.php';
 require __DIR__ . '/src/ImageInspector.php';
 require __DIR__ . '/src/View.php';
 

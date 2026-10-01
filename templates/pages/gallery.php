@@ -26,6 +26,15 @@ require __DIR__ . '/../partials/nav.php';
         </p>
     </header>
 
+    <?php if ($deleted): ?>
+        <section class="mb-8 rounded-2xl border border-tertiary/20 bg-tertiary/10 px-5 py-4 text-sm text-tertiary" role="status">
+            La imagen fue eliminada de la galeria.
+            <?php if ($cleanupFailed): ?>
+                El registro se retiro, pero Blob no pudo confirmar la limpieza del archivo; revisa los logs o el panel de Vercel Blob.
+            <?php endif; ?>
+        </section>
+    <?php endif; ?>
+
     <section class="mb-10 flex flex-col gap-4 rounded-2xl border border-outline-variant/20 bg-surface-container-low/80 p-5 md:flex-row md:items-center md:justify-between">
         <form class="flex w-full flex-col gap-3 md:max-w-3xl md:flex-row" method="get" action="index.php">
             <label class="relative flex-1">
@@ -77,6 +86,13 @@ require __DIR__ . '/../partials/nav.php';
                             <p class="mt-2 line-clamp-2 text-sm text-on-surface-variant"><?= e($photo['text']) ?></p>
                         </div>
                     </a>
+                    <form class="absolute right-5 top-5 z-10" action="eliminar.php" method="post" onsubmit="return confirm('¿Seguro que deseas eliminar esta imagen de la galeria?');">
+                        <input type="hidden" name="id" value="<?= (int) $photo['id'] ?>">
+                        <button class="inline-flex items-center gap-2 rounded-xl bg-error-container/90 px-3 py-2 text-xs font-bold uppercase tracking-[0.12em] text-error transition hover:bg-error-container" type="submit">
+                            <span class="material-symbols-outlined text-base">delete</span>
+                            Eliminar
+                        </button>
+                    </form>
                 </article>
             <?php endforeach; ?>
         </section>

@@ -94,6 +94,14 @@ require __DIR__ . '/../partials/nav.php';
                         Guardar cambios
                     </button>
                 </form>
+
+                <form class="mt-4" action="eliminar.php" method="post" onsubmit="return confirm('¿Seguro que deseas eliminar esta imagen de la galeria?');">
+                    <input type="hidden" name="id" value="<?= (int) $photo['id'] ?>">
+                    <button class="inline-flex w-full items-center justify-center gap-2 rounded-2xl border border-error/30 px-5 py-3 text-sm font-bold uppercase tracking-[0.18em] text-error transition hover:bg-error-container/30" type="submit">
+                        <span class="material-symbols-outlined">delete</span>
+                        Eliminar imagen
+                    </button>
+                </form>
             </div>
         </aside>
     </div>

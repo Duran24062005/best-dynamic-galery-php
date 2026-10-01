@@ -60,6 +60,14 @@ final class GalleryRepository
         ]);
     }
 
+    public function delete(int $id): bool
+    {
+        $statement = $this->connection->prepare('DELETE FROM fotos WHERE id = :id');
+        $statement->execute([':id' => $id]);
+
+        return $statement->rowCount() > 0;
+    }
+
     public function create(string $title, string $filename, string $description): int
     {
         $statement = $this->connection->prepare(
